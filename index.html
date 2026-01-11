@@ -4,17 +4,33 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dépanni - Assistance Routière</title>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&display=swap" rel="stylesheet">
+
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Leaflet CSS -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
      crossorigin=""/>
     
+    <!-- Process Shim for Browser Environment -->
+    <script>
+      if (typeof process === 'undefined') {
+        window.process = { env: {} };
+      }
+    </script>
+
     <script>
       tailwind.config = {
         darkMode: 'class', // Enable class-based dark mode
         theme: {
           extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+            },
             colors: {
               main: '#F7F7F9', // New Main Background
               secondary: '#2F362F', // New Secondary/Text Color
@@ -57,7 +73,7 @@
         transition: background-color 0.3s, color 0.3s;
       }
       html.dark body {
-        background-color: #1a1a1a;
+        background-color: #0F141A;
         color: #e5e5e5;
       }
       .leaflet-container {
@@ -67,7 +83,7 @@
         background: #F7F7F9;
       }
       html.dark .leaflet-container {
-        background: #1a1a1a;
+        background: #0F141A;
       }
       /* Custom Marker Styles */
       .custom-div-icon {
@@ -105,5 +121,7 @@
 </head>
   <body>
     <div id="root"></div>
+    <!-- Entry point for the React application -->
+    <script type="module" src="./index.tsx"></script>
   </body>
 </html>
