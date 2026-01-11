@@ -1,0 +1,8 @@
+{
+  "name": "Dépanni",
+  "description": "Une application d'assistance routière moderne pour le Maroc. Connecte les automobilistes aux mécaniciens en temps réel.",
+  "requestFramePermissions": [
+    "geolocation",
+    "microphone"
+  ]
+}
