@@ -15,26 +15,19 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
      crossorigin=""/>
-    
-    <!-- Process Shim for Browser Environment -->
-    <script>
-      if (typeof process === 'undefined') {
-        window.process = { env: {} };
-      }
-    </script>
 
     <script>
       tailwind.config = {
-        darkMode: 'class', // Enable class-based dark mode
+        darkMode: 'class',
         theme: {
           extend: {
             fontFamily: {
               sans: ['Inter', 'sans-serif'],
             },
             colors: {
-              main: '#F7F7F9', // New Main Background
-              secondary: '#2F362F', // New Secondary/Text Color
-              primary: '#3B82F6', // Keep Blue for Actions
+              main: '#F7F7F9',
+              secondary: '#2F362F',
+              primary: '#3B82F6',
               accent: '#F59E0B', 
               danger: '#EF4444',
               surface: '#ffffff',
@@ -85,12 +78,10 @@
       html.dark .leaflet-container {
         background: #0F141A;
       }
-      /* Custom Marker Styles */
       .custom-div-icon {
         background: transparent;
         border: none;
       }
-      /* Scrollbar styling */
       ::-webkit-scrollbar {
         width: 8px;
       }
@@ -105,23 +96,24 @@
         background: #94A3B8; 
       }
     </style>
-  <script type="importmap">
+<script type="importmap">
 {
   "imports": {
     "react/": "https://esm.sh/react@^19.2.3/",
     "react": "https://esm.sh/react@^19.2.3",
     "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
-    "@google/genai": "https://esm.sh/@google/genai@^1.34.0",
     "lucide-react": "https://esm.sh/lucide-react@^0.562.0",
-    "@supabase/supabase-js": "https://esm.sh/@supabase/supabase-js@2.39.3",
-    "leaflet": "https://esm.sh/leaflet@1.9.4"
+    "@vitejs/plugin-react": "https://esm.sh/@vitejs/plugin-react@^5.1.2",
+    "@supabase/supabase-js": "https://esm.sh/@supabase/supabase-js@^2.90.1",
+    "@google/genai": "https://esm.sh/@google/genai@^1.35.0",
+    "vite": "https://esm.sh/vite@^7.3.1",
+    "leaflet": "https://esm.sh/leaflet@^1.9.4"
   }
 }
 </script>
 </head>
   <body>
     <div id="root"></div>
-    <!-- Entry point for the React application -->
-    <script type="module" src="./index.tsx"></script>
+    <script type="module" src="/index.tsx"></script>
   </body>
 </html>
